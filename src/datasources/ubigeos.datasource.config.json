@@ -1,0 +1,14 @@
+{
+  "name": "ubigeos",
+  "connector": "dashdb",
+  "dsn": "DATABASE=BLUDB;HOSTNAME=dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net;PORT=50001;PROTOCOL=TCPIP;UID=PKS49073;PWD=l2bp4gppn+jl59sf;Security=SSL;",
+  "host": "dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net",
+  "port": 50001,
+  "user": "PKS49073",
+  "schema": "PKS49073",
+  "password": "l2bp4gppn+jl59sf",
+  "database": "BLUDB",
+  "minPoolSize":1,
+  "maxPoolSize":3,
+  "supportDashDB": true
+}

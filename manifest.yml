@@ -1,0 +1,4 @@
+applications:
+  - name: superubigeos
+    host: superubigeos
+    memory: 128M
