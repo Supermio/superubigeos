@@ -104,7 +104,7 @@ export class Level1 extends Entity {
   })
   estado?: Number;
 
-  @property({
+  /*  @property({
     type: String,
     required: true,
     length: 10,
@@ -117,7 +117,7 @@ export class Level1 extends Entity {
       nullable: 'N',
     },
   })
-  idtipo1: String;
+  idtipo1: String; */
 
   @property({
     type: String,
