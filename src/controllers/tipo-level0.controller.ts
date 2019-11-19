@@ -40,7 +40,7 @@ export class TipoLevel0Controller {
         'application/json': {
           schema: getModelSchemaRef(Tipolevel0, {
             title: 'NewTipolevel0',
-            
+
           }),
         },
       },
@@ -112,8 +112,12 @@ export class TipoLevel0Controller {
       },
     },
   })
-  async findById(@param.path.string('id') id: string): Promise<Tipolevel0> {
-    return this.tipolevel0Repository.findById(id);
+  async findById(
+    @param.path.string('id') id: string,
+    @param.query.object('filter', getFilterSchemaFor(Tipolevel0))
+    filter?: Filter<Tipolevel0>,
+    ): Promise<Tipolevel0> {
+    return this.tipolevel0Repository.findById(id,filter);
   }
 
   @patch('/tipolevel0s/{id}', {

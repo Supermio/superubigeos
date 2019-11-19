@@ -23,7 +23,7 @@ import {Tipolevel2Repository} from '../repositories';
 export class TipoLevel2Controller {
   constructor(
     @repository(Tipolevel2Repository)
-    public tipolevel2Repository : Tipolevel2Repository,
+    public tipolevel2Repository: Tipolevel2Repository,
   ) {}
 
   @post('/tipolevel2s', {
@@ -40,7 +40,6 @@ export class TipoLevel2Controller {
         'application/json': {
           schema: getModelSchemaRef(Tipolevel2, {
             title: 'NewTipolevel2',
-            
           }),
         },
       },
@@ -59,7 +58,8 @@ export class TipoLevel2Controller {
     },
   })
   async count(
-    @param.query.object('where', getWhereSchemaFor(Tipolevel2)) where?: Where<Tipolevel2>,
+    @param.query.object('where', getWhereSchemaFor(Tipolevel2))
+    where?: Where<Tipolevel2>,
   ): Promise<Count> {
     return this.tipolevel2Repository.count(where);
   }
@@ -77,7 +77,8 @@ export class TipoLevel2Controller {
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(Tipolevel2)) filter?: Filter<Tipolevel2>,
+    @param.query.object('filter', getFilterSchemaFor(Tipolevel2))
+    filter?: Filter<Tipolevel2>,
   ): Promise<Tipolevel2[]> {
     return this.tipolevel2Repository.find(filter);
   }
@@ -99,7 +100,8 @@ export class TipoLevel2Controller {
       },
     })
     tipolevel2: Tipolevel2,
-    @param.query.object('where', getWhereSchemaFor(Tipolevel2)) where?: Where<Tipolevel2>,
+    @param.query.object('where', getWhereSchemaFor(Tipolevel2))
+    where?: Where<Tipolevel2>,
   ): Promise<Count> {
     return this.tipolevel2Repository.updateAll(tipolevel2, where);
   }
@@ -112,8 +114,12 @@ export class TipoLevel2Controller {
       },
     },
   })
-  async findById(@param.path.string('id') id: string): Promise<Tipolevel2> {
-    return this.tipolevel2Repository.findById(id);
+  async findById(
+    @param.path.string('id') id: string,
+    @param.query.object('filter', getFilterSchemaFor(Tipolevel2))
+    filter?: Filter<Tipolevel2>,
+  ): Promise<Tipolevel2> {
+    return this.tipolevel2Repository.findById(id, filter);
   }
 
   @patch('/tipolevel2s/{id}', {
